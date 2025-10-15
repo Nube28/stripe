@@ -133,7 +133,7 @@
         paymentForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             try {
-                const response = await fetch(`http://localhost:3000/api/payments/${paymentId}/proccess`, { method: 'POST' });
+                const response = await fetch(`http://localhost:3000/api/payments/${paymentId}`, { method: 'PUT' });
                 const data = await response.json();
 
                 if (data.payment && data.payment.status === 'completed') {
